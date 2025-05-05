@@ -7,15 +7,23 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function loginGet(Request $request)
+
+    public function loginGet()
+    {
+        return view('icarus::login');
+    }
+
+    public function loginPost(Request $request)
     {
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('home');
+            return redirect()->intended('/home');
         }
 
-        return back()->withErrors(['email' => 'Invalid credentials.']);
+        return back()->withErrors([
+            'email' => 'Invalid credentials.'
+        ]);
     }
 }
 

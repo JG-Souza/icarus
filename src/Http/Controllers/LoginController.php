@@ -11,7 +11,7 @@ class LoginController extends Controller
 
     public function loginGet()
     {
-        return view('auth.login');
+        return view('icarus::auth.login');
     }
 
     public function loginPost(Request $request)

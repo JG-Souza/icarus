@@ -1,11 +1,11 @@
 <?php
 
-namespace Jgsouza\Icarus\Http\Controllers; // Criar pasta Http?
+namespace Jgsouza\Icarus\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller // As classes daqui remetem a POO? O que seria o extend?
+class LoginController extends Controller
 {
     public function loginGet(Request $request)
     {

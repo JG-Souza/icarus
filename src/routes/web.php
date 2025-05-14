@@ -3,8 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Jgsouza\Icarus\Http\Controllers\LoginController;
 
-Route::get('login', [LoginController::class, 'loginGet'])
-->name('login.get');
+Route::get('login', [LoginController::class, 'create'])
+->name('login');
 
-Route::post('login', [LoginController::class, 'loginPost'])
-->name('login.post');
+Route::post('login', [LoginController::class, 'store']);

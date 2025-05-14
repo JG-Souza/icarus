@@ -9,12 +9,12 @@ use Illuminate\Routing\Controller;
 class LoginController extends Controller
 {
 
-    public function loginGet()
+    public function create()
     {
         return view('icarus::auth.login');
     }
 
-    public function loginPost(Request $request)
+    public function store(Request $request)
     {
         $credentials = $request->only('email', 'password');
 

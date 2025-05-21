@@ -6,7 +6,14 @@
       "App\\": "app/",
       "Database\\Factories\\": "database/factories/",
       "Database\\Seeders\\": "database/seeders/",
-      "JgSouza\\Icarus\\": "src/"
+      "Jgsouza\\Icarus\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Jgsouza\\Icarus\\Providers\\IcarusProvider"
+      ]
     }
   },
   "authors": [

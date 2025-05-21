@@ -1,0 +1,19 @@
+{
+  "name": "jg-souza/icarus",
+  "description": "teste",
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Database\\Factories\\": "database/factories/",
+      "Database\\Seeders\\": "database/seeders/",
+      "JgSouza\\Icarus\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "JG-Souza",
+      "email": "joaogsouzafma@gmail.com"
+    }
+  ],
+  "require": {}
+}

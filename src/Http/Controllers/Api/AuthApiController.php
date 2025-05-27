@@ -1,6 +1,6 @@
 <?php
 
-namespace Jgsouza\Icarus\Http\Controllers;
+namespace Jgsouza\Icarus\Http\Controllers\Api;
 
 use Illuminate\Routing\Controller;
 use Tymon\JWTAuth\Facades\JWTAuth;

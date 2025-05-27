@@ -27,5 +27,10 @@
             <li class="py-2">Pagamento recebido para pedido #1233</li>
         </ul>
     </div>
+
+    <form action="{{ route('logout') }}" method="POST">
+        @csrf
+        <button type="submit">Logout</button>
+    </form>
 </div>
 @endsection

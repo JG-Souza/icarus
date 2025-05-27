@@ -22,5 +22,8 @@
       "email": "joaogsouzafma@gmail.com"
     }
   ],
-  "require": {}
+  "require": {
+    "php": "^8.0",
+    "tymon/jwt-auth": "^2.0"
+  }
 }

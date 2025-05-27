@@ -1,7 +1,13 @@
 <?php
 
-use Jgsouza\Icarus\Controllers\AuthController;
+use Jgsouza\Icarus\Http\Controllers\Web\AuthController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/login', [AuthController::class, 'loginGet'])
-->name('login.get');
+Route::middleware(['web'])->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm']);
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/logout', [AuthController::class, 'logout'])
+    ->middleware('auth');
+    Route::get('/dashboard', [AuthController::class, 'index'])
+    ->middleware('auth');
+});

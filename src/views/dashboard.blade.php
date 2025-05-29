@@ -1,36 +1,41 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div style="max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; margin-top: 3rem;">
+        <h1 style="font-size: 1.875rem; font-weight: 700; color: #111827; margin-bottom: 1.5rem;">Dashboard</h1>
 
-@section('content')
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-    <h1 class="text-3xl font-bold text-gray-900 mb-6">Dashboard</h1>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+            <div style="background-color: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Usuários</h2>
+                <p style="color: #374151; font-size: 1.875rem;">150</p>
+            </div>
+            <div style="background-color: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Pedidos</h2>
+                <p style="color: #374151; font-size: 1.875rem;">75</p>
+            </div>
+            <div style="background-color: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Receita</h2>
+                <p style="color: #374151; font-size: 1.875rem;">R$ 12.000</p>
+            </div>
+        </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow">
-            <h2 class="text-xl font-semibold mb-2">Usuários</h2>
-            <p class="text-gray-700 text-3xl">150</p>
+        <div style="margin-top: 2.5rem; background-color: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Últimas Atividades</h2>
+            <ul style="border-top: 1px solid #e5e7eb; list-style: none; padding-left: 0;">
+                <li style="padding-top: 0.5rem; padding-bottom: 0.5rem;">Usuário João fez login</li>
+                <li style="padding-top: 0.5rem; padding-bottom: 0.5rem; border-top: 1px solid #e5e7eb;">Pedido #1234 foi criado</li>
+                <li style="padding-top: 0.5rem; padding-bottom: 0.5rem; border-top: 1px solid #e5e7eb;">Pagamento recebido para pedido #1233</li>
+            </ul>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-            <h2 class="text-xl font-semibold mb-2">Pedidos</h2>
-            <p class="text-gray-700 text-3xl">75</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-            <h2 class="text-xl font-semibold mb-2">Receita</h2>
-            <p class="text-gray-700 text-3xl">R$ 12.000</p>
-        </div>
+
+        <form action="/logout" method="POST" style="margin-top: 1rem;">
+            <button type="submit" style="padding: 0.5rem 1rem; background-color: #ef4444; color: white; border-radius: 0.25rem; border: none; cursor: pointer;">Logout</button>
+        </form>
     </div>
-
-    <div class="mt-10 bg-white p-6 rounded-lg shadow">
-        <h2 class="text-xl font-semibold mb-4">Últimas Atividades</h2>
-        <ul class="divide-y divide-gray-200">
-            <li class="py-2">Usuário João fez login</li>
-            <li class="py-2">Pedido #1234 foi criado</li>
-            <li class="py-2">Pagamento recebido para pedido #1233</li>
-        </ul>
-    </div>
-
-    <form action="{{ route('logout') }}" method="POST">
-        @csrf
-        <button type="submit">Logout</button>
-    </form>
-</div>
-@endsection
+</body>
+</html>

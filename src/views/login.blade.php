@@ -1,28 +1,32 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div style="background-color: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; max-width: 28rem; margin-left: auto; margin-right: auto; margin-top: 6rem;">
+        <h2 style="font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem; color: #1f2937;">Login</h2>
 
-@section('content')
-<div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md mx-auto mt-24">
-    <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">Login</h2>
+        <form action="/login" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+            <div>
+                <label for="email" style="display: block; font-size: 0.875rem; font-weight: 500; color: #374151;">Email:</label>
+                <input type="email" name="email" id="email" required
+                    style="margin-top: 0.25rem; width: 100%; padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.5rem; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); outline: none;">
+            </div>
 
-    <form action="{{ route('login') }}" method="POST" class="space-y-4">
-        @csrf
-        <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
-            <input type="email" name="email" id="email" required
-                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200 focus:outline-none" />
-        </div>
+            <div>
+                <label for="password" style="display: block; font-size: 0.875rem; font-weight: 500; color: #374151;">Senha:</label>
+                <input type="password" name="password" id="password" required
+                    style="margin-top: 0.25rem; width: 100%; padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.5rem; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); outline: none;">
+            </div>
 
-        <div>
-            <label for="password" class="block text-sm font-medium text-gray-700">Senha:</label>
-            <input type="password" name="password" id="password" required
-                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200 focus:outline-none" />
-        </div>
-
-        <button type="submit"
-            class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200">
-            Entrar
-        </button>
-    </form>
-</div>
-@endsection
-
+            <button type="submit"
+                style="width: 100%; background-color: #2563eb; color: white; padding: 0.5rem; border-radius: 0.5rem; border: none; cursor: pointer; transition: background-color 0.2s;">
+                Entrar
+            </button>
+        </form>
+    </div>
+</body>
+</html>

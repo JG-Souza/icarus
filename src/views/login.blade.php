@@ -10,6 +10,7 @@
         <h2 style="font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem; color: #1f2937;">Login</h2>
 
         <form action="/login" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+            @csrf
             <div>
                 <label for="email" style="display: block; font-size: 0.875rem; font-weight: 500; color: #374151;">Email:</label>
                 <input type="email" name="email" id="email" required

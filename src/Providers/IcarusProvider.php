@@ -16,5 +16,10 @@ class IcarusProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
         $this->loadViewsFrom(__DIR__.'/../views', 'icarus');
+        
+        // Publicando views
+        $this->publishes([
+            __DIR__.'/../views' => resource_path('views/vendor/icarus'),
+        ], 'icarus-views');
     }
 }

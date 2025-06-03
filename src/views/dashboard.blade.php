@@ -34,6 +34,7 @@
         </div>
 
         <form action="/logout" method="POST" style="margin-top: 1rem;">
+            @csrf
             <button type="submit" style="padding: 0.5rem 1rem; background-color: #ef4444; color: white; border-radius: 0.25rem; border: none; cursor: pointer;">Logout</button>
         </form>
     </div>

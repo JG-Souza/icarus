@@ -9,11 +9,20 @@
     <div style="background-color: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; max-width: 28rem; margin-left: auto; margin-right: auto; margin-top: 6rem;">
         <h2 style="font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem; color: #1f2937;">Login</h2>
 
+        <!-- Exibição de erros -->
+        @if ($errors->any())
+            <div style="margin-bottom: 1rem; padding: 0.75rem; background-color: #fee2e2; border: 1px solid #fca5a5; border-radius: 0.5rem; color: #b91c1c;">
+                @foreach ($errors->all() as $error)
+                    <p style="margin: 0; font-size: 0.875rem;">{{ $error }}</p>
+                @endforeach
+            </div>
+        @endif
+
         <form action="/login" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
             @csrf
             <div>
                 <label for="email" style="display: block; font-size: 0.875rem; font-weight: 500; color: #374151;">Email:</label>
-                <input type="email" name="email" id="email" required
+                <input type="email" name="email" id="email" required value="{{ old('email') }}"
                     style="margin-top: 0.25rem; width: 100%; padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.5rem; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); outline: none;">
             </div>
 

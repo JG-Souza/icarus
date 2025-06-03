@@ -11,11 +11,18 @@ class AuthController extends Controller
 {
     public function showLoginForm()
     {
+        if (Auth::check()) {
+            return redirect('/dashboard');
+        }
         return view('icarus::login');
     }
 
     public function login(LoginRequest $request)
     {
+        if (Auth::check()) {
+            return redirect('/dashboard');
+        }
+        
         $data = $request->only('email', 'password');
 
         if (Auth::attempt($data)) {

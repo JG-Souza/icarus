@@ -22,4 +22,22 @@ class IcarusProvider extends ServiceProvider
             __DIR__.'/../views' => resource_path('views/vendor/icarus'),
         ], 'icarus-views');
     }
+
+    public function register()
+    {
+        if (config('auth.providers.users')) {
+            config([
+                'auth.providers.users.model' => \Jgsouza\Icarus\Models\User::class,
+            ]);
+        }
+
+        if (!config('auth.guards.api')) {
+            config([
+                'auth.guards.api' => [
+                    'driver' => 'jwt',
+                    'provider' => 'users',
+                ],
+            ]);
+        }
+    }
 }

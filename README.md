@@ -31,8 +31,8 @@ php artisan jwt:secret
 
 ### API (JWT)
 
-- POST `/api/auth/login` — Login e emissão de token JWT.
-- POST `/api/auth/logout` — Logout (token inválido).
+- POST `/auth/login` — Login e emissão de token JWT.
+- POST `/auth/logout` — Logout (token inválido).
 
 ### Web (Sessão)
 
